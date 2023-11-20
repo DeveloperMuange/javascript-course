@@ -8,7 +8,7 @@
       true
       false
 
-      console.log(3 > 5);
+     /* console.log(3 > 5);
 
       console.log(5 === '5.00')
 
@@ -36,6 +36,48 @@
       console.log(true || false);
 
       console.log(!true);
+
+
+      // Truthy and Falsy values
+      if (5) {
+        console.log ('truthy');
+      }
+
+      if (0) {
+        console.log ('truthy');
+      }
+
+      if (-5) {
+        console.log ('falsy');
+      }
+
+
+      const cartQuantity = 5;
+
+      if (cartQuantity){
+        console.log('cart has products');
+      }
+      */
+
+
+     const result = 0 ? 'truthy': 'falsy';
+     console.log(result);
+
+     false && console.log('hello');
+
+     const message1 = false && 'hello';
+     console.log(message1);
+
+
+     const message2 = 5 && 'hello';
+     console.log(message2);
+
+     const currency1 = 'EUR' || 'USD';
+     console.log(currency1);
+
+     const currency2 = undefined || 'USD';
+     console.log(currency2);
+
 
     </script>
   </body>

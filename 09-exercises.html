@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM EXERCISES</title>
+  </head>
+  <body>
+    
+    <button>9a</button>
+    <button class="js-done">9b</button>
+    <p></p>
+    <button onclick="
+    document.querySelector('.js-choice')
+      .innerHTML = `You chose: heads`;
+    ">heads</button>
+
+    <button onclick="
+    document.querySelector('.js-choice')
+      .innerHTML = `You chose: tails`;
+    ">tails</button>
+
+    <p class="js-choice"></p>
+
+    <input placeholder="Name" class="js-name-input"
+    onkeydown="
+    if(event.key === 'Enter'){
+      displayName();
+    }
+    ">
+
+    <button onclick="
+    displayName();
+    ">Submit</button>
+
+    <p class="js-message"></p>
+
+  
+
+    <input placeholder="Type something" class="js-input"
+    onkeyup="
+    const inputElement = document.querySelector('.js-input');
+    document.querySelector('.js-message')
+      .innerHTML = inputElement.value;
+    ">
+
+    <p class="js-message"></p>
+    
+    <script>
+      console.log(document.querySelector('button'));
+      document.querySelector('.js-done').innerHTML = '9b done!';
+
+      function displayName () {
+        const inputElement = document.querySelector('.js-name-input');
+    document.querySelector('.js-message')
+      .innerHTML = `Your name is: ${inputElement.value}`;
+      }
+
+    </script>
+  </body>
+</html>

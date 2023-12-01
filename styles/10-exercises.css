@@ -1,0 +1,42 @@
+.amazon-button{
+  background-color: rgb(255, 216, 20);
+  border: none;
+  padding: 5px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.request-now-button{
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius:5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.schedule-later-button{
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.toggle-button{
+  background-color: rgb(230, 230, 230);
+  border: none;
+  padding: 12px 20px;
+  border-radius:5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.is-toggled{
+  background-color: black;
+  color: white;
+}

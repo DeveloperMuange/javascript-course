@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays & Loops Practice A</title>
+  </head>
+  <body>
+    <script>
+      //CREATE AN ARRAY AND CHANGE THE LAST VALUE TO 99
+      const nums = [10, 20, 30];
+      nums[nums.length-1] = 99
+      console.log(nums);
+
+      // FUNCTION TO DISPLAY THE LAST VALUE OF AN ARRAY
+      function getLastValue(array){
+        if (array.length > 0) {
+          return array[array.length - 1];
+        } else {
+          return null;
+        }
+        //return array[array.length - 1];
+      }
+      console.log(getLastValue([1,2,3,4,5]));
+
+
+      // FUNCTION TO SWAP FIRST AND LAST VALUES OF AN ARRAY
+      function arraySwap(array) {
+        const lastIndex = array.length-1
+
+        //We have to save the first and last values in variables first.
+        //Otherwise, we will lose one of the values if we swap directly
+
+        const lastValue = array[lastIndex];
+        const firstValue = array[0];
+
+        array[0] = lastValue;
+        array[lastIndex] = firstValue;
+
+        return array;
+      }
+
+      console.log(arraySwap([1,2,3,4,5,6]));
+
+
+      // FOR LOOP TO COUNT FROM 0 TO 10, INCREAMENTING BY 2
+
+      for(let i = 0; i <= 10; i+=2) {
+        console.log(i);;
+      }
+
+      // FOR LOOP TO COUNT FROM 5 TO 0
+      for (let i = 5; i >=0; i--){
+        console.log(i);
+      }
+
+      // WHILE LOOP TO COUNT FROM 0 TO 10, INCREAMENTING BY 2
+      let i = 0;
+      while (i<= 10) {
+        console.log(i);
+        i+=2;
+      }
+
+      // WHILE LOOP TO COUNT FROM 5 TO 0
+      i =5;
+      while(i>=0){
+        console.log(i);
+        i--;
+      }
+
+      //LOOP THAT TAKES AN ARRAY OF NUMBERS AND CREATES A NEW ARRAY
+      // WHERE EACH NUMBER IS INCREASED BY 1
+      const array = [1, 2, 3];
+      const result = [];
+
+      for(let i = 0; i < array.length; i++){
+        result.push(array[i] + 1);
+        //result[i] = array[i]+1;
+      }
+      console.log(result);
+
+      //CREATE A FUNCTION THAT TAKES AN ARRAY OF NUMBERS 
+      //AND RETURNS AN ARRAY WHERE EACH NUMBER IS INCREASED BY 1
+      function addOne(array){
+        const result = [];
+
+        for(let i = 0; i < array.length; i++){
+        result.push(array[i] + 1);
+        }
+        return result;
+      }
+      console.log(addOne([1,2,3]));
+      console.log(addOne([-2,-1,0,99]));
+
+      //CREATE A FUNCTION addNum(array, num) THAT TAKES AN ARRAY OF NUMBERS 
+      //AND RETURNS AN ARRAY WHERE EACH NUMBER IS INCREASED BY 'NUM'
+
+      function addNum (array, num){
+       const result = [];
+        for(let i = 0; i < array.length; i ++){
+          result.push(array[i] + num)
+        }
+        return result;
+      }
+
+      console.log(addNum([1,2,3],2));
+
+      //CREATE A FUNCTION addArrays(array1, array2) THAT TAKES 2 ARRAYS OF NUMBERS
+      //AND ADDS EACH NUMBER IN THE ARRAYS TOGETHER
+      function addArrays(array1, array2){
+        const result = [];
+        for(let i = 0; i < array.length; i++){
+          result.push(array1[i] + array2[i]);
+        }
+        return result;
+      }
+
+      console.log(addArrays([1, 1, 2], [1, 1, 3]));
+      console.log(addArrays([1, 2, 3], [4, 5, 6]));
+
+      //CREATE A FUNCTION countPositive(nums) THAT TAKES AN ARRAY OF NUMBERS
+      //AND RETURNS HOW MANY NUMBERS IN THE ARRAY ARE GREATER THAN 0
+
+      function countPositive(nums){
+        let result = 0;
+
+        for (let i = 0; i <= nums.length; i++){
+          if(nums[i]>0){
+            result++;
+          }
+        }
+        return result;
+      }
+      console.log(countPositive([1, -3, 5]));
+      console.log(countPositive([-2, 3, -5, 7, 10]));
+    </script>
+  </body>
+</html>

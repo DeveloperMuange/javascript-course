@@ -131,6 +131,73 @@
       }
       console.log(countPositive([1, -3, 5]));
       console.log(countPositive([-2, 3, -5, 7, 10]));
+
+      //CREATE A FUNCTION minMax(nums) THAT TAKES AN ARRAY OF NUMBERS AND RETURNS AN OBJECT
+      //WITH THE MINIMUM AND MAXIMUM NUMBERS IN THE ARRAY
+      
+      function minMax(nums){
+        //We'll set the starting values of min and max as null. 
+        const result = {
+          min: null,
+          max: null
+        };
+
+        for (let i = 0; i < nums.length; i++){
+          const value = nums[i];
+
+          //If the min is null OR the value is less than the min,
+          // update the min.
+          if (result.min === null || value < result.min){
+            result.min = value;
+          }
+
+          //If the max is null OR the value is less than the max,
+          // update the min.
+          if (result.max === null || value > result.max){
+            result.max = value;
+          }
+
+          // We have to use 2 if-statements above instead of
+          // an if-else statement. This makes sure both the
+          // min and max are set if they are null.
+        }
+
+        return result;
+      }
+
+      console.log(minMax([1, -3, 5]));
+      console.log(minMax([-2, 3, -5, 7, 10]));
+
+
+      console.log(minMax([]));
+      console.log(minMax([3]));
+
+
+      //CREATE A FUNCTION countWords(words) THAT TAKES AN ARRAY OF STRINGS 
+      //AND RETURNS AN OBJECT WITH HOW MANY TIMES EACH STRING APPEARED.
+
+      function countWords(words){
+        const result = {};
+
+        for(let i = 0; i < words.length; i++){
+          const word = words[i];
+
+          // result[word] adds/accesses a property using whatever is
+          // saved inside the 'word' variable.
+          // If word = 'apple', result[word] will do result['apple']
+          // If word = 'grape', result[word] will do result['grape']
+
+          if (!result[word]) {
+            result[word] = 1;
+          } else {
+            result[word]++;
+          }
+        }
+
+        return result;
+      }
+
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
     </script>
   </body>
 </html>

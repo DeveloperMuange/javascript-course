@@ -5,6 +5,8 @@
   </head>
   <body>
     <script>
+/*
+
       //CREATE AN ARRAY AND CHANGE THE LAST VALUE TO 99
       const nums = [10, 20, 30];
       nums[nums.length-1] = 99
@@ -198,6 +200,134 @@
       }
 
       console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+      */
+
+      //CREATE AN ARRAY OF STRINGS, LOOP OVER THE ARRAY, 
+      //AND CHECK IF THE STRING 'search' IS INSIDE THE ARRAY.
+
+      let words = ['hello', 'world', 'search', 'good', 'search'];
+
+      // Set the index to -1 at the start (so we'll assume
+      // the string 'search' doesn't exist in the array).
+      // If we find the string 'search' in the array, we
+      // will update the index.
+
+      let index = -1;
+
+      for (let i = 0; i < words.length; i++){
+        if (words[i] === 'search') {
+          index = i;
+          break;
+        }
+      }
+      
+      console.log(index);
+
+
+      // CREATE A FUNCTION findIndex(array, word) THAT SEARCHES AN ARRAY
+      // FOR A STRING (in the word parameter) AND RETURNS THE INDEX
+      // OF THE FIRST APPEARANCE OF THE STRING. IF IT DOESN'T EXIST, RETURN -1.
+
+      function findIndex(array, word){
+        //let array = [];
+
+       // index = -1;
+
+        for (let i = 0; i< array.length; i++){
+          if (array[i] === word) {
+            // Instead of creating an accumulator
+            // variable and updating it in the loop,
+            // we can just return i directly, when
+            // we find it since this is a function.
+            return i;
+          }
+        }
+
+        // If the function has not returned by now,
+        // logically that means the word must not
+        // exist in the array, so we'll return -1.
+        return -1;
+      }
+
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'red'));
+      console.log(findIndex(['green', 'red', 'blue', 'red'], 'yellow'));
+
+      // CREATE A FUNCTION removeEgg(foods) THAT TAKES AN ARRAY OF STRINGS 
+      // AND RETURNS AN ARRAY WHERE THE STRING 'egg' IS REMOVED. 
+      // REMOVE ONLY THE FIRRST TWO EGGS
+
+    function removeEgg(foods){
+      const result = [];
+      let eggsRemoved = 0;
+
+      for(let i = 0; i < foods.length; i++){
+        // Only skip 'egg' if we removed less than 2
+        // of them so far.
+
+        if (foods[i] === 'egg' && eggsRemoved < 2){
+          // Update the number of 'egg' we have removed.
+          // This must be done before continue, otherwise,
+          // doing continue first will just skip this code.
+
+          eggsRemoved++;
+          continue;
+        } 
+        // We don't need to have an else here because
+        // the only way to reach this code is if the 
+        // if-statement above is false.
+        result.push(foods[i]);
+      }
+
+      return result;
+    }
+
+    console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'ham']));
+
+
+    
+    for (let i = 0; i <= 20; i++){
+      // The trick to this problem is to check if
+      // the number is divisible by 3 and 5 first.
+      // Otherwise, it will always display 'Fizz'.
+      if (i % 3 === 0 && i % 5 === 0) {
+      console.log('FizzBuzz');
+
+      } else if (i % 3 === 0) {
+        console.log('Fizz');
+
+      } else if (i % 5 === 0){
+        console.log('Buzz');
+
+      } else {
+        console.log(i);
+        
+      } 
+    }
+
+    // CREATE A FUNCTION unique(array) THAT TAKES AN ARRAY OF STRINGS AND RETURNS AN ARRAY
+    // WHERE EACH STRING ONLY APPEARS ONCE. 
+    // TRY TO USE THE findIndex() FUNCTION IN THE SOLUTION
+    function unique(array){
+      const result = [];
+
+      for (let i = 0; i< array.length; i++){
+        const word = array[i];
+
+        // Using the findIndex() function from above, we
+        // can check if the string is already in the result array.
+        // If it's not in the result array
+        // (index is -1), then add it to the result array.
+
+        if (findIndex(result, word) === -1){
+          result.push(word);
+        }
+      }
+      return result;
+    }
+
+    console.log(unique(['green', 'red', 'blue', 'red']));
+    console.log(unique(['red', 'green', 'green', 'red']));
     </script>
   </body>
 </html>

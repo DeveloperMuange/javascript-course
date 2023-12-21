@@ -21,7 +21,7 @@
       // If there are no new messages, stop displaying
       // the notification in the tab.
       if (messages === 0){
-        stopNotifications();
+        stopNotification();
       }
     }
     ">Remove</button>
@@ -59,12 +59,12 @@
         }, 1000);
       }
 
-    function stopNotification() {
-      isDisplayingNotification = false;
+      function stopNotification() {
+        isDisplayingNotification = false;
 
-      clearInterval(intervalId);
-      document.title = 'App';
-    }
+        clearInterval(intervalId);
+        document.title = 'App';
+      }
     </script>
   </body>
 </html>
